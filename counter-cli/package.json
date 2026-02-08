@@ -16,6 +16,7 @@
     }
   },
   "scripts": {      
+    "deploy": "node --experimental-specifier-resolution=node --loader ts-node/esm src/deploy.ts",
     "test-undeployed": "vitest run counter.test.ts",  
     "test-preview": "RUN_ENV_TESTS=true TEST_ENV=preview vitest run counter.test.ts",
     "tui-undeployed": "node --experimental-specifier-resolution=node --loader ts-node/esm src/tui_standalone.ts",     
@@ -23,7 +24,7 @@
     "setup-undeployed": "node --experimental-specifier-resolution=node --loader ts-node/esm src/setup/standalone.ts", 
     "ps-undeployed": "docker compose -f ps-undeployed.yml up",
     "ps-preview": "docker compose -f ps-preview.yml up",               
-    "build": "rm -rf dist && tsc --project tsconfig.build.json",
+    "build": "powershell -Command \"if (Test-Path dist) { Remove-Item -Recurse -Force dist }\" && tsc --project tsconfig.build.json",
     "lint": "eslint src",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "private-provider-testing": "vitest run src/test/private-provider.test.ts",

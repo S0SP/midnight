@@ -1,0 +1,12 @@
+{
+  "contractAddress": "1437076a20488f24e4474636f1c04490a9dbbe7852fd96b954970e4795af5057",
+  "deployedAt": "2026-02-08T12:47:25.297Z",
+  "network": "local",
+  "walletAddress": "mn_addr_undeployed1h3ssm5ru2t6eqy4g3she78zlxn96e36ms6pq996aduvmateh9p9sk96u7s",
+  "config": {
+    "indexer": "http://127.0.0.1:8088/api/v3/graphql",
+    "indexerWS": "ws://127.0.0.1:8088/api/v3/graphql/ws",
+    "node": "ws://127.0.0.1:9944",
+    "proofServer": "http://127.0.0.1:6300"
+  }
+}
