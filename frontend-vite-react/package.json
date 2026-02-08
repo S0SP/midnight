@@ -8,7 +8,7 @@
     "build": "npm run copy-contract-keys && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "copy-contract-keys": "mkdir -p ./public/midnight/counter/keys && mkdir -p ./public/midnight/counter/zkir && cp -r ../counter-contract/src/managed/counter/keys/* ./public/midnight/counter/keys && cp -r ../counter-contract/src/managed/counter/zkir/* ./public/midnight/counter/zkir"
+    "copy-contract-keys": "powershell -Command \"if (-Not (Test-Path ./public/midnight/counter/keys)) { New-Item -ItemType Directory -Force -Path ./public/midnight/counter/keys | Out-Null }; if (-Not (Test-Path ./public/midnight/counter/zkir)) { New-Item -ItemType Directory -Force -Path ./public/midnight/counter/zkir | Out-Null }; Copy-Item -Recurse -Force ../counter-contract/src/managed/counter/keys/* ./public/midnight/counter/keys/; Copy-Item -Recurse -Force ../counter-contract/src/managed/counter/zkir/* ./public/midnight/counter/zkir/\""
   },
   "dependencies": {
     "@meshsdk/counter-contract": "*",

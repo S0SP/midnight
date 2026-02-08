@@ -281,6 +281,59 @@ proofServer: 'http://127.0.0.1:6300'  // Local proof server
 
 ---
 
+## ☁️ Deploy to Vercel
+
+This project is ready for instant deployment to Vercel.
+
+### Quick Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/midnight-starter-template)
+
+### Manual Deployment
+
+1. **Deploy Contract to Preview Network**
+   ```powershell
+   cd counter-cli
+   npm run deploy
+   ```
+
+2. **Push to GitHub** (if not already done)
+   ```powershell
+   git push origin main
+   ```
+
+3. **Deploy to Vercel**
+   - Go to [vercel.com/new](https://vercel.com/new)
+   - Import your repository
+   - Set environment variable: `VITE_CONTRACT_ADDRESS` (from deployment.json)
+   - Click "Deploy"
+
+4. **Access Your DApp**
+   - Your app will be live at `https://your-project.vercel.app`
+   - Connect Lace wallet and start using the counter!
+
+**📖 [Full Deployment Guide](./VERCEL_DEPLOYMENT.md)** - Complete step-by-step instructions
+
+---
+
+## 📋 Project Files
+
+### Configuration Files
+
+- **`vercel.json`**: Vercel deployment configuration with build settings and CORS headers
+- **`.env.vercel.template`**: Environment variable template for Vercel deployment
+- **`package.json`**: Workspace configuration and npm scripts
+- **`turbo.json`**: Turborepo build configuration
+
+### Documentation
+
+- **`README.md`**: This file - project overview and quick start
+- **`VERCEL_DEPLOYMENT.md`**: Complete Vercel deployment guide
+- **`DEPLOYMENT_SUCCESS.md`**: Local deployment success documentation
+- **`INTEGRATION_COMPLETE.md`**: Technical integration details
+
+---
+
 ## 📚 Learn More
 
 - **[Midnight Documentation](https://docs.midnight.network/)**: Official Midnight Network docs
