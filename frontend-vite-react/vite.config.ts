@@ -30,8 +30,7 @@ export default defineConfig(({ mode }) => ({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      // Add any other aliases you need
+      // '@': path.resolve(__dirname, './src'),
     },
   },
   optimizeDeps: {

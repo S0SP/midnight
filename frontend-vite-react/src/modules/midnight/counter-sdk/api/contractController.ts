@@ -2,7 +2,7 @@ import { type Logger } from 'pino';
 import { type ContractAddress } from '@midnight-ntwrk/compact-runtime';
 import * as Rx from 'rxjs';
 import { CounterContract, CounterPrivateStateId, CounterProviders, DeployedCounterContract, emptyState, UserAction, type DerivedState } from './common-types';
-import { Counter, CounterPrivateState, createPrivateState, witnesses } from '@meshsdk/counter-contract';
+import { Counter, CounterPrivateState, createPrivateState, witnesses } from '../../../../contract';
 import { deployContract, findDeployedContract } from '@midnight-ntwrk/midnight-js-contracts';
 import { PrivateStateProvider } from '@midnight-ntwrk/midnight-js-types';
 
@@ -71,6 +71,7 @@ export class ContractController implements ContractControllerInterface {
     this.turns$.next({ increment: 'incrementinng the counter' });
 
     try {
+      // @ts-ignore - Argument type mismatch with generated types
       const txData = await this.deployedContract.callTx.increment();
       this.logger?.trace({
         increment: {
